@@ -211,6 +211,11 @@ public class Game extends JFrame implements Runnable, KeyListener {
         String goalCount = goalsPlayerOne + " : " + goalsPlayerTwo;
         Rectangle2D rect= g.getFontMetrics().getStringBounds(goalCount, g);
 
+        // add CPU info, if singleplayer
+        if (singlePlayer) {
+            goalCount += " CPU";
+        }
+
         // add winner text, if someone won
         if (goalsPlayerOne == 8) {
             goalCount = "WINNER - " + goalCount;
@@ -220,7 +225,7 @@ public class Game extends JFrame implements Runnable, KeyListener {
 
         g.drawString(goalCount, (int) ((double) WINDOW_WIDTH / 2 - (rect.getWidth() / 2)), 50);
 
-        String bottomText = "Exit: ESC, Pause: SPACE, Switch SinglePlayer: TAB, Controls Player One: W/S, Controls Player Two: UP/DOWN";
+        String bottomText = "Exit: ESC, Pause: SPACE, Switch SinglePlayer: Q, Controls Player One: W/S, Controls Player Two: UP/DOWN";
         g.drawString(bottomText, 50, WINDOW_HEIGHT - 50);
     }
 
