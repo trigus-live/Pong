@@ -143,9 +143,9 @@ public class Game extends JFrame implements Runnable, KeyListener {
 
             // computer logic
             if (singlePlayer) {
-                if (posBallY > posPaddleTwo + PADDLE_HEIGHT / 2) {
+                if (posBallY - PADDLE_HEIGHT / 15 > posPaddleTwo + PADDLE_HEIGHT / 2) {
                     paddleTwoDirection = 1;
-                } else if(posBallY < posPaddleTwo - PADDLE_HEIGHT / 2) {
+                } else if(posBallY + PADDLE_HEIGHT / 15 < posPaddleTwo - PADDLE_HEIGHT / 2) {
                     paddleTwoDirection = -1;
                 } else {
                     paddleTwoDirection = 0;
