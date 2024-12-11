@@ -247,6 +247,10 @@ public class Game extends JFrame implements Runnable, KeyListener {
                 if (!singlePlayer) paddleTwoDirection = -1;
             } case KEY_PAUSE -> {
                 gamePaused = !gamePaused;
+                if (goalsPlayerOne == 8 || goalsPlayerTwo == 8) {
+                    goalsPlayerOne = 0;
+                    goalsPlayerTwo = 0;
+                }
             } case KEY_SINGLE_PLAYER_SWITCH -> {
                 singlePlayer = !singlePlayer;
                 if (!singlePlayer) paddleTwoDirection = 0;
